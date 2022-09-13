@@ -9,6 +9,7 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const plantRoutes = require('./routes/plants')
+const idRoutes = require('./routes/ids')
 
 require('dotenv').config({path: './config/.env'})
 
@@ -40,6 +41,7 @@ app.use(flash())
   
 app.use('/', mainRoutes)
 app.use('/plants', plantRoutes)
+app.use('/id', idRoutes)
  
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')

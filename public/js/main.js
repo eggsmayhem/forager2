@@ -4,6 +4,9 @@
 
 //this function just renders a map with all a user's previous plants on load
 document.getElementById('load-map').addEventListener('click', loadMap)
+document.getElementById('id-plant').addEventListener('click', indRedirect)
+
+
 async function loadMap() {
   try {
     console.log('test function run')
@@ -16,23 +19,12 @@ async function loadMap() {
     const plantHolder = await response.json()
 
     //hardcode test since map won't load at all, but should
-    const plant = {
-      url: "https://plant.id/media/images/fb4120879ae04199821cce79b6fd60c8.jpg",
-      scientificName: "Magnolia virginiana",
-      coords: [39.0047, -77.3600]
-    }
+    // const plant = {
+    //   url: "https://plant.id/media/images/fb4120879ae04199821cce79b6fd60c8.jpg",
+    //   scientificName: "Magnolia virginiana",
+    //   coords: [39.0047, -77.3600]
+    // }
 
-     
-    // .then(function(data) {
-    //   const plantHolder = data
-    //   console.log(plantHolder);
-    //   return plantHolder;
-    // })
-    // .then(function(plantHolder) {
-    //     //within this function we need to render everything
-    //     console.log(plantHolder[1])
-    // })
-   
         console.log(plantHolder[0])
 
         const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -75,15 +67,6 @@ async function loadMap() {
             // shadowAnchor: [22, 94]
         })
 
-        //lets try to get two of these suckers, then go back through and worry about looping through all of them
-        // const singleMarker = L.marker(plantHolder[0].coordinates, {icon: mandrakeIcon})
-        // console.log(plant.coords)
-        // const singleMarker = L.marker(plantHolder[0].coordinates, {icon: mandrakeIcon})
-        // const popup = singleMarker.bindPopup(plantHolder[0].scientificName + '<br>' + '<img src='+ '"'+plantHolder[0].img+'"'+'style="width: 100%; height: 100%">')
-        // popup.addTo(map)
-    
-        // const secondMarker = L.marker([39.0047, -77.3602], {icon: mandrakeIcon})
-        // secondMarker.addTo(map) 
         const cards = {}
         const pops = {}
         for (let i = 0; i < plantHolder.length; i++) {
@@ -112,3 +95,35 @@ async function loadMap() {
   }
             
 }
+
+// async function indRedirect() {
+//     const message = document.querySelector('#message')
+//     //check if user has access to geolocation, add to localstorage
+//     if (!navigator.geolocation) {
+//       message.textContent = `Your browser doesn't support Geolocation`;
+//       message.classList.add('error');
+//       // return;
+//     }
+
+//     navigator.geolocation.getCurrentPosition(onSuccess, onError)
+
+//     function onSuccess(position) {
+//       const {
+//         latitude,
+//         longitude
+//       } = position.coords;
+
+//     localStorage.setItem('plantCoords', [latitude, longitude])
+
+//     message.classList.add('success');
+//     message.innerText = `your coordinates are: ${latitude} lat ${longitude} lon`
+
+//     }
+
+//     function onError() {
+//       message.classList.add('error');
+//       message.textContent = `Failed to get your location!`;
+//     }
+//     await fetch('/id')
+   
+// }
