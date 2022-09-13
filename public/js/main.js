@@ -77,13 +77,20 @@ async function loadMap() {
 
         //lets try to get two of these suckers, then go back through and worry about looping through all of them
         // const singleMarker = L.marker(plantHolder[0].coordinates, {icon: mandrakeIcon})
-        console.log(plant.coords)
-        const singleMarker = L.marker(plantHolder[0].coordinates, {icon: mandrakeIcon})
-        const popup = singleMarker.bindPopup(plantHolder[0].scientificName + '<br>' + '<img src='+ '"'+plantHolder[0].img+'"'+'style="width: 100%; height: 100%">')
-        popup.addTo(map)
+        // console.log(plant.coords)
+        // const singleMarker = L.marker(plantHolder[0].coordinates, {icon: mandrakeIcon})
+        // const popup = singleMarker.bindPopup(plantHolder[0].scientificName + '<br>' + '<img src='+ '"'+plantHolder[0].img+'"'+'style="width: 100%; height: 100%">')
+        // popup.addTo(map)
     
-        const secondMarker = L.marker([39.0047, -77.3602], {icon: mandrakeIcon})
-        secondMarker.addTo(map) 
+        // const secondMarker = L.marker([39.0047, -77.3602], {icon: mandrakeIcon})
+        // secondMarker.addTo(map) 
+        const cards = {}
+        const pops = {}
+        for (let i = 0; i < plantHolder.length; i++) {
+          cards['card'+i] = L.marker(plantHolder[i].coordinates, {icon: mandrakeIcon})
+          pops['pop' + i] = cards['card'+i].bindPopup(plantHolder[i].scientificName + '<br>' + '<img src='+ '"'+plantHolder[i].img+'"'+'style="width: 100%; height: 100%">')
+          pops['pop'+i].addTo(map)
+        }
 
         const baseMaps = {
             "OSM": osm,
@@ -93,8 +100,8 @@ async function loadMap() {
         }
         
         const overlayMaps = {
-            "Marker": singleMarker,
-            "Second Marker": secondMarker,
+            // "Marker": singleMarker,
+            // "Second Marker": secondMarker,
             "Weather": nexrad
         }
         
