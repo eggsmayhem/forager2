@@ -4,7 +4,7 @@
 
 //this function just renders a map with all a user's previous plants on load
 document.getElementById('load-map').addEventListener('click', loadMap)
-document.getElementById('id-plant').addEventListener('click', indRedirect)
+// document.getElementById('id-plant').addEventListener('click', indRedirect)
 
 
 async function loadMap() {

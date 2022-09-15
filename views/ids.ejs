@@ -11,13 +11,22 @@
     <h1>Plant Id</h1>
     <div id="message"></div>
     
-
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
+    <% if (locals.plant) { %>
+        <span><%= plant.scientificName %></span>
+        <img src="<%= plant.img%>">
+    <% } %>
+    <form action="/id/idPlant" enctype="multipart/form-data" method="POST">
+        <div class="mb-3">
+            <span>Identify plant by photo</span>
+          <label for="imgUpload" class="form-label">Image</label>
+          <input type="file" class="form-control" id="imageUpload" name="file">
+        </div>
+        <input type="text" name="knownPlantName" placeholder="Plant name if already known">
+        <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
     </form>
 
     <a href="/logout">Logout</a>
+    <a href="/plants">View Map</a>
 
     <script src="js/idsmain.js"></script>
 </body>
