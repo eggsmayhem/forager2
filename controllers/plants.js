@@ -18,11 +18,10 @@ module.exports = {
         console.log(req.user)
         try{
             const plants = await Plant.find({userId:req.user.id})
+
+            //remove any plants that don't have coordinages as this kind of object breaks the front end 
     
-            // const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
-            // console.log(plants)
-            // res.render('plants.ejs', { user: req.user })
-            //this is returning all the plants, I am just struggling to get that state to actually render through Leaflet JS 
+         
             res.status(200).json(plants)
         }catch(err){
             console.log(err)
