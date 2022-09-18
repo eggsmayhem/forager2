@@ -29,7 +29,22 @@ const PlantSchema = new mongoose.Schema({
             cloudinaryId: {
                 type: String
             },
-            article: {
+            // article: {
+            //     type: String
+            // },
+            wikiPic: {
+                type: String
+            },
+            description: {
+                type: String
+            },
+            link: {
+                type: String
+            },
+            extract: {
+                type: String
+            },
+            title: {
                 type: String
             },
             rendered: {

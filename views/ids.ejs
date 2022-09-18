@@ -24,11 +24,12 @@
     </form>
     <% if (locals.plant) { %>
         <div class="article">
+            <%= plant.title %>
             <%= plant.scientificName %>
-            <%= plant.wikiPic %>
+            <img src="<%= plant.wikiPic %>" class="plant-img"alt="">
             <%= plant.description %>
             <%= plant.extract %>
-            <%= plant.link %>
+            <a href="<%= plant.link %>">View on Wikipedia</a>
         </div>
     <% } %>
     

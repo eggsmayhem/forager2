@@ -70,15 +70,18 @@ module.exports = {
                 method: 'GET',
                 headers: {'User-Agent': 'https://spyles.netlify.app/'}
             })
-            const article = await wikiData.text()
+            // const article = await wikiData.text()
+            const article = await wikiData.json()
+            console.log(article)
 
             //im getting the article, but all the below values are returning undefined, even though they do exist if you check postman
 
             
-            // const wikiPic = article.originalimage.source
-            // const description = await article.description
-            // const link = await article.content_urls.mobile.page
-            // const extract = await article.extract
+            const wikiPic = article.originalimage.source
+            const description = article.description
+            const link = article.content_urls.mobile.page
+            const extract = article.extract
+            const title = article.title
             console.log(article)
             
 
@@ -88,10 +91,11 @@ module.exports = {
                 coordinates: coords,
                 userId: req.user.id,
                 // article: article
-                // wikiPic : wikiPic,
-                // description: description,
-                // link: link,
-                // extract: extract
+                wikiPic : wikiPic,
+                description: description,
+                link: link,
+                extract: extract,
+                title: title
               })
 
               
