@@ -9,12 +9,10 @@
 </head>
 <body>
     <h1>Plant Id</h1>
+    <a href="/plants" class="butt"> View map</a>
     <div id="message"></div>
     
-    <% if (locals.plant) { %>
-        <span><%= plant.scientificName %></span>
-        <img src="<%= plant.img%>">
-    <% } %>
+  
     <form action="/id/idPlant" enctype="multipart/form-data" method="POST">
         <div class="mb-3">
             <span>Identify plant by photo</span>
@@ -24,6 +22,10 @@
         <input type="text" name="knownPlantName" placeholder="Plant name if already known">
         <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
     </form>
+    <% if (locals.plant) { %>
+        <div class="article"><%- plant.article -%></div>
+    <% } %>
+    
 
     <a href="/logout">Logout</a>
     <a href="/plants">View Map</a>

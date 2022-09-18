@@ -11,3 +11,11 @@
     background-color: purple;
     color: white;
 }
+
+.butt {
+    background-color: orange;
+    text-decoration: none;
+    padding: 3%;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}

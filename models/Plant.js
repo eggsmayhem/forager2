@@ -29,6 +29,9 @@ const PlantSchema = new mongoose.Schema({
             cloudinaryId: {
                 type: String
             },
+            article: {
+                type: String
+            },
             rendered: {
                 type: Boolean,
                 default: false
