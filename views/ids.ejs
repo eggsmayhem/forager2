@@ -23,7 +23,13 @@
         <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
     </form>
     <% if (locals.plant) { %>
-        <div class="article"><%- plant.article -%></div>
+        <div class="article">
+            <%= plant.scientificName %>
+            <%= plant.wikiPic %>
+            <%= plant.description %>
+            <%= plant.extract %>
+            <%= plant.link %>
+        </div>
     <% } %>
     
 

@@ -60,20 +60,38 @@ module.exports = {
             const plantDetails = plantData.data
             console.log(plantDetails)
               //currently saving the PlantAPI reference image to limit the cloudinary storage space I require. I might eventually offer the user's image so they can more easily identify locations and how others where to forage
-            const wikiData = await fetch('https://en.wikipedia.org/api/rest_v1/page/html/'+plantDetails.suggestions[0].plant_name, {
+              //gets full article
+            // const wikiData = await fetch('https://en.wikipedia.org/api/rest_v1/page/html/'+plantDetails.suggestions[0].plant_name, {
+            //     method: 'GET',
+            //     headers: {'User-Agent': 'https://spyles.netlify.app/'}
+            // })
+            //gets partial article
+            const wikiData = await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+plantDetails.suggestions[0].plant_name, {
                 method: 'GET',
                 headers: {'User-Agent': 'https://spyles.netlify.app/'}
             })
-            console.log(wikiData.text)
             const article = await wikiData.text()
+
+            //im getting the article, but all the below values are returning undefined, even though they do exist if you check postman
+
+            
+            // const wikiPic = article.originalimage.source
+            // const description = await article.description
+            // const link = await article.content_urls.mobile.page
+            // const extract = await article.extract
             console.log(article)
+            
 
             const plant = await Plant.create({
                 scientificName: plantDetails.suggestions[0].plant_name,
                 img: plantDetails.images[0].url,
                 coordinates: coords,
                 userId: req.user.id,
-                article: article
+                // article: article
+                // wikiPic : wikiPic,
+                // description: description,
+                // link: link,
+                // extract: extract
               })
 
               
