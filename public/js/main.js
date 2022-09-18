@@ -3,14 +3,14 @@
 // const { response } = require("express");
 
 //this function just renders a map with all a user's previous plants on load
-document.getElementById('load-map').addEventListener('click', loadMap)
+// document.getElementById('load-map').addEventListener('click', loadMap)
 // document.getElementById('id-plant').addEventListener('click', indRedirect)
 
 
-async function loadMap() {
+(async () => {
   try {
     console.log('test function run')
-    const map = L.map('map').setView([39.0047, -77.3602], 13)
+    const map = L.map('map').setView([39.0047, -77.3602], 10)
 
     const response = await fetch('/plants/getPlants', {
       method: 'GET',
@@ -94,7 +94,7 @@ async function loadMap() {
     console.log(err)
   }
             
-}
+})();
 
 // async function indRedirect() {
 //     const message = document.querySelector('#message')
