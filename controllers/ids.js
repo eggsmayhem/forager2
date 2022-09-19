@@ -68,7 +68,7 @@ module.exports = {
             //gets partial article
             const wikiData = await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+plantDetails.suggestions[0].plant_name, {
                 method: 'GET',
-                headers: {'User-Agent': 'https://spyles.netlify.app/'}
+                headers: {'User-Agent': process.env.USER_AGENT}
             })
             // const article = await wikiData.text()
             const article = await wikiData.json()
