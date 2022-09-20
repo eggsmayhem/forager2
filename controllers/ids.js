@@ -5,8 +5,10 @@ const axios = require('axios')
 const cloudinary = require("../middleware/cloudinary")
 const encode = require('node-base64-image').encode
 require('dotenv').config({path: '../config/.env'})
+const isValidCoordinates = require('is-valid-coordinates')
 
 module.exports = {
+  //load id page to submit form 
     loadPage: async (req, res) => {
         try {
             console.log('render test')
@@ -16,16 +18,16 @@ module.exports = {
             console.log(err)
         }
     },
-    idRedirect: async (req, res) => {
-        try {
-            console.log('redirect test')
-            res.redirect('/id')
+    // idRedirect: async (req, res) => {
+    //     try {
+    //         console.log('redirect test')
+    //         res.redirect('/id')
 
-        }
-        catch(err) {
-            console.log(err)
-        }
-    },
+    //     }
+    //     catch(err) {
+    //         console.log(err)
+    //     }
+    // },
     
     //change to userId: req.user.id
     //something in this controller is causing the MIMEtype/security issue 
@@ -33,6 +35,7 @@ module.exports = {
         try {
             //upload original image to cloudinary
             const user = await User.findById({_id: req.user.id})
+            //the coords here have already been validate before they were stored to the user object
             const coords = user.tempCoords
             console.log('coords from user' + coords)
             const plantImg = await cloudinary.uploader.upload(req.file.path)
@@ -109,12 +112,22 @@ module.exports = {
         }
     },
 
+      //potential security issue, as here client code is saved in the User document, and later it is rendered to the user 
+      //could potentially just do a custom validator with regex or the like, check on speed and size difference 
     storeCoords: async(req, res) => {
       try {
-        const coords = await req.body.coordinates.map(x=>x.toString())
-        await User.findOneAndUpdate({_id:req.user.id}, {
-          tempCoords: coords
-        })
+        const coords = await req.body.coordinates
+        if (isValidCoordinates(coords[0], coords[1])) {
+          const userCoords = coords.map(x=>x.toString())
+          await User.findOneAndUpdate({_id:req.user.id}, {
+            tempCoords: userCoords
+          })
+        }
+        else {
+          const securityWarning = "Security Warning: Invalid Coordinates sent from client" 
+          res.render('ids.ejs', {securityWarning: securityWarning})
+        }
+       
         console.log(coords)
       }
       catch(err) {

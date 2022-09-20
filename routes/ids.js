@@ -7,6 +7,6 @@ const upload = require("../middleware/multer")
 router.get('/', ensureAuth, idsController.loadPage)
 router.post('/idPlant', upload.single("file"), idsController.idPlant)
 router.post('/storeCoords', idsController.storeCoords)
-router.get('/redirect', ensureAuth, idsController.idRedirect)
+// router.get('/redirect', ensureAuth, idsController.idRedirect)
 
 module.exports = router

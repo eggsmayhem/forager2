@@ -19,6 +19,7 @@
 
     message.classList.add('success');
     message.innerText = `your coordinates are: ${latitude} lat ${longitude} lon`
+    //rewrite this callback as async? But nested? 
     sendCoords([latitude, longitude])
     }
 

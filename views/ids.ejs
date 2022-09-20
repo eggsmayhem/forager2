@@ -25,6 +25,8 @@
         <input type="text" name="knownPlantName" placeholder="Plant name if already known">
         <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
     </form>
+    <% if (locals.securityWarning) { %>
+    <% } %>
     <% if (locals.plant) { %>
         <div class="article">
             <%= plant.title %>
