@@ -1,4 +1,4 @@
-(()=> {
+(async ()=> {
     const message = document.querySelector('#message')
     //check if user has access to geolocation, add to localstorage
     if (!navigator.geolocation) {

@@ -1,7 +1,6 @@
 
 /* map needs a defined height for leaflet to work */
 
-
 #map { 
     height: 500px; 
 
@@ -23,3 +22,6 @@
 .plant-img {
     width: 50%;
 }
+
+
+/* Display of Idenfitied Plant */

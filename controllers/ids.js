@@ -28,6 +28,7 @@ module.exports = {
     },
     
     //change to userId: req.user.id
+    //something in this controller is causing the MIMEtype/security issue 
     idPlant: async (req, res) => {
         try {
             //upload original image to cloudinary
