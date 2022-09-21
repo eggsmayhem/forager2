@@ -9,6 +9,14 @@ const isValidCoordinates = require('is-valid-coordinates')
 
 module.exports = {
   //load id page to submit form 
+    testRoute: async (req, res) => {
+      try {
+        res.render('displayPlant.ejs')
+      }
+      catch(err) {
+        console.log(err)
+      }
+    },
     loadPage: async (req, res) => {
         try {
             console.log('render test')

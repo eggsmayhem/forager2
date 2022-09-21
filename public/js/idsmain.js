@@ -45,8 +45,9 @@ async function sendCoords(coordArray) {
   // console.log(data)
 }
 
-//trigger click event from button skin to override default styling 
+//trigger click event from upload/take picture button skin to override default styling 
 
 document.querySelector('.button-skin').addEventListener('click', ()=> {
   document.getElementById('imageUpload').click()
 })
+

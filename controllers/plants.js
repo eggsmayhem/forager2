@@ -27,6 +27,17 @@ module.exports = {
             console.log(err)
         }
     },
+    deleteNewestPlant: async (req, res) => {
+        try {
+            const latest = await Plant.findOne({userId: req.user.id}).sort({ date: -1})
+            await latest.remove()
+            console.log("Plant Removed!")
+            res.render('ids.ejs')
+        }
+        catch(err) {
+            console.log(err)
+        }
+    }
     //change to userId: req.user.id
     // createPlant: async (req, res) => {
     //     try {

@@ -5,27 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-
-    <h1>Plant Id</h1>
-    <a href="/plants" class="butt"> View map</a>
-
-    <div id="message"></div>
-    <div class="article">
-        <div class="plant-title">Rhexia mariana</div>
-        <div class="scientific-name">Rhexia mariana</div>
-        <img src="img/sweetspire.jpg" alt="">
-        <div class="description">Species of flowering plant in the family Melastomataceae</div>
-        <div class="extract">Rhexia mariana is a species of flowering plant in the Melastomataceae family known by the common names pale meadow beauty or Maryland meadowbeauty. It is native to the eastern and lower midwestern United States.</div>
-        <a href="https://www.wikipedia.org/">View on Wikipedia</a>
+    <div class="main-display-container">
+        <h1>Plant Identified:</h1>
+        <hr>
+        <div id="message"></div>
+        <div class="article">
+            <!-- <div class="plant-title">Rhexia mariana</div> -->
+            <h2 class="scientific-name">Rhexia mariana</h2>
+            <img src="../img/virginiacreeper.jpg" alt="" class="plant-img">
+            <div class="description">Species of flowering plant in the family Melastomataceae</div>
+            <hr>
+            <div class="extract">Rhexia mariana is a species of flowering plant in the Melastomataceae family known by the common names pale meadow beauty or Maryland meadowbeauty. It is native to the eastern and lower midwestern United States.</div>
+            <a href="https://www.wikipedia.org/">View on Wikipedia</a>
+            <div class="buttons-container">
+                <a href="/plants">Save to Map</a>
+                <a href="/logout">Don't save</a>
+            </div>
+        </div>
     </div>
 
     
 
-    <a href="/logout">Logout</a>
-    <a href="/plants">View Map</a>
+    <div class="bottom-nav-wrapper">
+        <div class="bottom-nav">
+          <a href="/plants">My Map</a>
+          <a href="/logout">Logout</a>
+          <a href="#">Help / FAQ</a>
+        </div>
+      </div>  
 
     <script src="js/idsmain.js"></script>
 </body>
