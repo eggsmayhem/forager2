@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <!-- enable leaflet maps -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
     integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
@@ -15,14 +16,14 @@
     crossorigin=""></script>
 </head>
 <body>
-   <div class="main-container">
+   <div class="map-main-container">
         
-        <a href = "/id" class="butt">Identify Plant</a><br/>
+        <!-- <a href = "/id" class="butt">Identify Plant</a><br/> -->
         <p id = "status"></p>
         <a id = "map-link" target="_blank"></a>
         <div id = "map"></div>
         <div id = "message"></div>
-        <div id = "weathermap"></div>
+        <!-- <div id = "weathermap"></div> -->
     </div>
     <!-- <form action="/plants/sendPlantImg" enctype="multipart/form-data" method="POST">
         <div class="mb-3">
@@ -34,6 +35,12 @@
       <button id = "load-map">Load Map</button> -->
 
     <!-- <script src="js/coordinates.js"></script> -->
+    <div class="plants-nav bottom-nav-wrapper">
+      <div class="bottom-nav">
+        <a href="/id">Identify Plant</a>
+        <a href="/logout">Logout</a>
+      </div>
+  </div>  
     <script src="js/main.js"></script> 
 </body>
 </html>
