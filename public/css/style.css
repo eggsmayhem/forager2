@@ -29,24 +29,95 @@ html {
 }
 
 
-/* Display of Idenfitied Plant */
+/* id page */
 .id-main-container {
     /* background-color: hsl(120, 35%, 10%); */
+    border: 1px solid hsl(120, 8%, 42%);
     background-color: hsl(120, 35%, 15%);
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20%;
+    padding: 5% 2%;
 }
+
+.id-main-container h1 {
+    text-align: center;
+}
+/* body {
+    display: flex;
+    align-items: center;
+} */
 
 .id-main-container>* {
     /* background-color: hsla(78, 17%, 73%, 0.945); */
-    border: 1px solid hsl(120, 8%, 42%);
+    /* border: 1px solid hsl(120, 8%, 42%); */
     color: white;
     width: 95%;
     margin: 3% 4%;
     padding: 2%;
     border-radius: 5px;
 }
-.nav {
+/* .nav {
     display: flex;
+} */
+
+.bottom-nav-wrapper {
+    position: fixed;
+    bottom: 0;
+    background-color: hsl(120, 35%, 15%);
+    width: 100%;
+    padding: 2%;
+   
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+}
+
+.bottom-nav > * {
+    border: 1px solid hsl(120, 8%, 42%);
+    border-radius: 5px;
+    padding: 2%;
+    text-decoration: none;
+    color: white;
+    width: 25%;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type=button], button {
+    background-color: hsl(120, 35%, 15%);
+    color: white;
+    width: 100px;
+    padding: 3px;
+    border-radius: 5px;
+  
+}
+
+input[type=button] {
+   margin-bottom: 15%;
+   /* padding: 10% */
+}
+
+/* hide default file submit button */
+#imageUpload {
+    display: none;
+}
+
+hr {
+    border: 0 none;
+    height: 1px;
+    /* Set the hr color */
+    background-color: hsl(120, 8%, 42%);
+    padding: 0% !important;
+    width: 100% !important;
+ 
 }

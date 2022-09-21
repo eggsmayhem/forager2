@@ -5,43 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-
-    <h1>Plant Id</h1>
-    <a href="/plants" class="butt"> View map</a>
-
-    <div id="message"></div>
     
-  
-    <form action="/id/idPlant" enctype="multipart/form-data" method="POST">
-        <div class="mb-3">
-            <span>Identify plant by photo</span>
-          <label for="imgUpload" class="form-label">Image</label>
-          <input type="file" class="form-control" id="imageUpload" name="file">
-        </div>
-        <span>Name of plant if already known: </span>
-        <input type="text" name="knownPlantName" placeholder="Plant name if already known">
-        <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-    </form>
-    <% if (locals.securityWarning) { %>
-    <% } %>
-    <% if (locals.plant) { %>
-        <div class="article">
-            <%= plant.title %>
-            <%= plant.scientificName %>
-            <img src="<%= plant.wikiPic %>" class="plant-img"alt="">
-            <%= plant.description %>
-            <%= plant.extract %>
-            <a href="<%= plant.link %>">View on Wikipedia</a>
-        </div>
-    <% } %>
-    
+    <div class="id-main-container">
+        <h1>Take or Upload Photo to ID Plant 🌿</h1>
+        <hr>
 
-    <a href="/logout">Logout</a>
-    <a href="/plants">View Map</a>
+        <div id="message"></div>
+        <hr>
+        <form action="/id/idPlant" enctype="multipart/form-data" method="POST">
+            <div class="mb-3">
+            <!-- <h3>Click browse to take or upload photo</h3> -->
+            <!-- <label for="imgUpload" class="form-label">Image</label> -->
+            <input type="button" id="loadFileXml" value="📷 or Upload" class="button-skin"/>
+            <input type="file" class="form-control" id="imageUpload" name="file">
+            </div>
+            <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+        </form>
+        <% if (locals.securityWarning) { %>
+        <% } %>
+    </div>
+    <div class="bottom-nav-wrapper">
+        <div class="bottom-nav">
+            <a href="/plants">View Map</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>  
 
-    <script src="js/idsmain.js"></script>
+    <script src="/js/idsmain.js"></script>
 </body>
 </html>

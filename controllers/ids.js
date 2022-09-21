@@ -108,7 +108,7 @@ module.exports = {
               
               console.log('Plant has been created!')
               console.log(plant)
-              res.render('ids.ejs', {plant: plant})
+              res.render('displayPlant.ejs', {plant: plant})
         }
         catch(err) {
             console.log(err)
