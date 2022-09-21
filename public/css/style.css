@@ -1,4 +1,10 @@
 
+* {
+    box-sizing: border-box;
+}
+html {
+    background-color: hsl(120, 35%, 10%);
+}
 /* map needs a defined height for leaflet to work */
 
 #map { 
@@ -25,3 +31,19 @@
 
 
 /* Display of Idenfitied Plant */
+.id-main-container {
+    /* background-color: hsl(120, 35%, 10%); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.id-main-container>* {
+    background-color: hsla(78, 17%, 73%, 0.945);
+    margin: 3% 4%;
+    padding: 2%;
+    border-radius: 5px;
+}
+.nav {
+    display: flex;
+}

@@ -31,6 +31,7 @@ module.exports = {
     
     //change to userId: req.user.id
     //something in this controller is causing the MIMEtype/security issue 
+    //identifies a new plant, gets its wiki info, sets that new plant in the database for the user, then directly renders just that new plant and its info. 
     idPlant: async (req, res) => {
         try {
             //upload original image to cloudinary
@@ -88,6 +89,8 @@ module.exports = {
             const title = article.title
             console.log(article)
             
+            //name and image are from PlantAPI
+            //Wikipicture, description, link, extract, and title are from Wikipedia API 
 
             const plant = await Plant.create({
                 scientificName: plantDetails.suggestions[0].plant_name,

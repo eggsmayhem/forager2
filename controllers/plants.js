@@ -28,13 +28,13 @@ module.exports = {
         }
     },
     //change to userId: req.user.id
-    createPlant: async (req, res) => {
-        try {
-            await Plant.create({scientificName: req.body.scientificName, coordinates: req.body.coordinates, img: req.body.img, userId: req.body.id})
-            console.log('Plant has been added')
-        }
-        catch(err) {
+    // createPlant: async (req, res) => {
+    //     try {
+    //         await Plant.create({scientificName: req.body.scientificName, coordinates: req.body.coordinates, img: req.body.img, userId: req.body.id})
+    //         console.log('Plant has been added')
+    //     }
+    //     catch(err) {
 
-        }
-    }
+    //     }
+    // }
 }    

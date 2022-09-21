@@ -5,42 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
 </head>
 <body>
-
-    <h1>Plant Id</h1>
-    <a href="/plants" class="butt"> View map</a>
-
-    <div id="message"></div>
-    
-  
-    <form action="/id/idPlant" enctype="multipart/form-data" method="POST">
-        <div class="mb-3">
+    <div class="id-main-container">
+        <div class="nav">
+            <a href="/plants" class="butt"> View my Map</a>
+            <a href="/id" class="butt"> Id Another Plant</a>
+        </div>
+        <h1>What is this Plant?</h1>
+        
+        <div id="message"></div>
+        <form action="/id/idPlant" enctype="multipart/form-data" method="POST">
+            <div class="mb-3">
             <span>Identify plant by photo</span>
-          <label for="imgUpload" class="form-label">Image</label>
-          <input type="file" class="form-control" id="imageUpload" name="file">
-        </div>
-        <span>Name of plant if already known: </span>
-        <input type="text" name="knownPlantName" placeholder="Plant name if already known">
-        <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-    </form>
-    <% if (locals.securityWarning) { %>
-    <% } %>
-    <% if (locals.plant) { %>
-        <div class="article">
-            <%= plant.title %>
-            <%= plant.scientificName %>
-            <img src="<%= plant.wikiPic %>" class="plant-img"alt="">
-            <%= plant.description %>
-            <%= plant.extract %>
-            <a href="<%= plant.link %>">View on Wikipedia</a>
-        </div>
-    <% } %>
-    
-
-    <a href="/logout">Logout</a>
-    <a href="/plants">View Map</a>
+            <label for="imgUpload" class="form-label">Image</label>
+            <input type="file" class="form-control" id="imageUpload" name="file">
+            </div>
+            <span>Name of plant if already known: </span>
+            <input type="text" name="knownPlantName" placeholder="Plant name if already known">
+            <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+        </form>
+        <!-- <div class="security-warning"></div> -->
+            <div class="article">
+                <div class="plant-title">Rhexia mariana</div>
+                <div class="scientific-name">Rhexia mariana</div>
+                <img src="img/sweetspire.jpg" alt="">
+                <div class="description">Species of flowering plant in the family Melastomataceae</div>
+                <div class="extract">Rhexia mariana is a species of flowering plant in the Melastomataceae family known by the common names pale meadow beauty or Maryland meadowbeauty. It is native to the eastern and lower midwestern United States.</div>
+                <a href="https://www.wikipedia.org/">View on Wikipedia</a>
+            </div>
+        <a href="/logout">Logout</a>
+        <a href="/plants">View Map</a>
+    </div>
 
     <script src="js/idsmain.js"></script>
 </body>
