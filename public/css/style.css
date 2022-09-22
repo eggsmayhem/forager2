@@ -121,10 +121,10 @@ hr {
     border: 2px solid rgb(40, 122, 83);
 }
 /* this should be styling the popups (run an inspect element to verify this classname), but isn't */
-.leaflet-popup-content-wrapper {
+/* .leaflet-popup-content-wrapper {
     background-color: purple;
-    color: white;
-}
+    color: black;
+} */
 
 .map-main-container {
     display: flex;

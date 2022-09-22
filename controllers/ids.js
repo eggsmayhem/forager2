@@ -99,10 +99,11 @@ module.exports = {
             
             //name and image are from PlantAPI
             //Wikipicture, description, link, extract, and title are from Wikipedia API 
+            //should pick one image to save and render on display and map page rather than saving both 
 
             const plant = await Plant.create({
                 scientificName: plantDetails.suggestions[0].plant_name,
-                img: plantDetails.images[0].url,
+                // img: plantDetails.images[0].url,
                 coordinates: coords,
                 userId: req.user.id,
                 // article: article

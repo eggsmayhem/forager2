@@ -32,7 +32,10 @@ module.exports = {
             const latest = await Plant.findOne({userId: req.user.id}).sort({ date: -1})
             await latest.remove()
             console.log("Plant Removed!")
-            res.render('ids.ejs')
+            // res.render('ids.ejs')
+            // res.render('ids.ejs')
+            // req.method = 'GET'
+            res.redirect('/id')
         }
         catch(err) {
             console.log(err)
