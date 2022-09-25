@@ -29,7 +29,10 @@
 
     <div class="buttons-container">
         <a href="/plants">Save to Map</a>
-        <div class="delete-plant">Don't save</div>
+        <form
+        action="/plants/deleteLatest/<%= plant._id %>?_method=DELETE"
+        method="POST"
+      ><button type="submit" class="btn btn-primary" value="Upload">Delete Plant</button></form>
     </div>
 
     <script src="/js/display.js"></script>

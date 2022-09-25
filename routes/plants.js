@@ -5,7 +5,7 @@ const { ensureAuth } = require('../middleware/auth')
 
 router.get('/', ensureAuth, plantsController.loadPlantsPage)
 router.get('/getPlants', ensureAuth, plantsController.getPlants)
-router.delete('/deleteLatest', plantsController.deleteNewestPlant)
+router.delete('/deleteLatest/:id', plantsController.deleteNewestPlant)
 // router.post('/createPlant', plantsController.createPlant)
 
 

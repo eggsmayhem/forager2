@@ -29,13 +29,16 @@ module.exports = {
     },
     deleteNewestPlant: async (req, res) => {
         try {
-            const latest = await Plant.findOne({userId: req.user.id}).sort({ date: -1})
-            await latest.remove()
+            // const latest = await Plant.findOne({userId: req.user.id}).sort({ date: -1})
+            // await latest.remove()
+           
+            const plant = await Plant.findByIdAndDelete({_id: req.params.id})
+            console.log(plant)
             console.log("Plant Removed!")
             // res.render('ids.ejs')
             // res.render('ids.ejs')
             // req.method = 'GET'
-            res.redirect('/id')
+            res.redirect('/plants')
         }
         catch(err) {
             console.log(err)
