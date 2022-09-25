@@ -45,6 +45,6 @@ app.use('/', mainRoutes)
 app.use('/plants', plantRoutes)
 app.use('/id', idRoutes)
  
-app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT || 3000, ()=>{
     console.log('Server is running, you better catch it!')
 })    
