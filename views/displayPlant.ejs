@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
 
     <h1>Plant Id</h1>
-    <a href="/plants" class="butt"> View map</a>
 
     <div id="message"></div>
     
@@ -28,13 +28,15 @@
     <% } %>
 
     <div class="buttons-container">
-        <a href="/plants">Save to Map</a>
+        <!-- <a href="/plants" class="btn btn-primary">View on Map</a> -->
+        <form action="/plants">
+            <button type="submit" value="View on Map">View On Map</button>
+        </form>
+        
         <form
         action="/plants/deleteLatest/<%= plant._id %>?_method=DELETE"
         method="POST"
       ><button type="submit" class="btn btn-primary" value="Upload">Delete Plant</button></form>
     </div>
-
-    <script src="/js/display.js"></script>
 </body>
 </html>
