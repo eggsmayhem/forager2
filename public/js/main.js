@@ -71,7 +71,7 @@
         const pops = {}
         for (let i = 0; i < plantHolder.length; i++) {
           cards['card'+i] = L.marker(plantHolder[i].coordinates, {icon: mandrakeIcon})
-          pops['pop' + i] = cards['card'+i].bindPopup(plantHolder[i].scientificName + '<br>' + '<img src='+ '"'+plantHolder[i].wikiPic+'"'+'style="width: 100%; height: 100%;">')
+          pops['pop' + i] = cards['card'+i].bindPopup(plantHolder[i].scientificName + '<br>' + '<a href="/id/loadPlant/'+plantHolder[i]._id+'">View Plant Info</a>' + '<br>' + '<img src='+ '"'+plantHolder[i].wikiPic+'"'+'style="width: 100%; height: 100%;">')
           pops['pop'+i].addTo(map)
         }
 

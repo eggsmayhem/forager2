@@ -124,6 +124,18 @@ module.exports = {
         }
     },
 
+    getPlantFromMap: async(req, res) => {
+      try {
+        // const plantId = req.params.id
+        const plant = await Plant.findById({_id: req.params.id})
+        res.render('displayPlant.ejs', {plant: plant})
+
+      }
+      catch(err) {
+        console.log(err)
+      }
+    },
+
       //potential security issue, as here client code is saved in the User document, and later it is rendered to the user 
       //could potentially just do a custom validator with regex or the like, check on speed and size difference 
     storeCoords: async(req, res) => {

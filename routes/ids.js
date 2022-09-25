@@ -8,6 +8,7 @@ router.get('/', ensureAuth, idsController.loadPage)
 router.get('/test', ensureAuth, idsController.testRoute)
 router.post('/idPlant', upload.single("file"), idsController.idPlant)
 router.post('/storeCoords', idsController.storeCoords)
+router.get('/loadPlant/:id', idsController.getPlantFromMap)
 
 // router.get('/redirect', ensureAuth, idsController.idRedirect)
 
