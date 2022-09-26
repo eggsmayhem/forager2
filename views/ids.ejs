@@ -9,24 +9,25 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-    
-    <div class="id-main-container">
-        <h1>Take or Upload Photo to ID Plant 🌿</h1>
-        <hr>
+    <div class="id-main-container-wrapper">
+        <div class="id-main-container">
+            <h1>Take or Upload Photo to ID Plant 🌿</h1>
+            <hr>
 
-        <div id="message"></div>
-        <hr>
-        <form action="/id/idPlant" enctype="multipart/form-data" method="POST">
-            <div class="mb-3">
-            <!-- <h3>Click browse to take or upload photo</h3> -->
-            <!-- <label for="imgUpload" class="form-label">Image</label> -->
-            <input type="button" id="loadFileXml" value="📷 or Upload" class="button-skin"/>
-            <input type="file" class="form-control" id="imageUpload" name="file">
-            </div>
-            <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-        </form>
-        <% if (locals.securityWarning) { %>
-        <% } %>
+            <div id="message"></div>
+            <hr>
+            <form action="/id/idPlant" enctype="multipart/form-data" method="POST">
+                <div class="mb-3">
+                <!-- <h3>Click browse to take or upload photo</h3> -->
+                <!-- <label for="imgUpload" class="form-label">Image</label> -->
+                <input type="button" id="loadFileXml" value="📷 or Upload" class="button-skin"/>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+                </div>
+                <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+            <% if (locals.securityWarning) { %>
+            <% } %>
+        </div>
     </div>
     
     <div class="bottom-nav-wrapper">

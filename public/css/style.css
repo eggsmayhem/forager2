@@ -26,6 +26,22 @@ h1, h3 {
     padding: 5% 2%;
 }
 
+@media only screen 
+  and (min-device-width: 736px) 
+   { 
+    .id-main-container {
+        width: 736px;
+        height: 580px;
+        margin-top: 1%;
+    }
+    .id-main-container-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
 .id-main-container h1 {
     text-align: center;
 }
@@ -50,7 +66,7 @@ h1, h3 {
 .bottom-nav-wrapper {
     position: fixed;
     bottom: 0;
-    background-color: hsl(120, 35%, 15%);
+    background-color: hsla(120, 35%, 15%, 0.527);
     width: 100%;
     padding: 2%;
     z-index: 100;
@@ -67,7 +83,7 @@ h1, h3 {
 .bottom-nav > * {
     border: 1px solid hsl(120, 8%, 42%);
     border-radius: 5px;
-    padding: 2%;
+    padding: 1.5%;
     text-decoration: none;
     color: white;
     width: 25%;
@@ -130,9 +146,11 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-top: 10%;
+    /* justify-content: center; */
+    height: 140vh;
+   
 }
+
 .leaflet-container {
     width: 90%;
 }
@@ -203,26 +221,109 @@ hr {
     border-radius: 5px;
 }
 
-/* login page */
-.index-main-container {
-    /* background-image: url(../img/plantbackground.jpg);
-    background-repeat: no-repeat; */
+/* index page */
+/* .index-main-container {
+    background-image: url(../img/plantbackground.jpg);
+    background-repeat: no-repeat;
     height: 100vh;
-    /* background-size: contain; */
+    background-size: contain;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 5px;
-}
+} */
 
-#logo {
+/* #logo {
     height: 30%;
     width: 100%;
-    border-radius: 30%;
-}
+    
+} */
 
-.index-text {
+/* .index-text {
 
     color: black;
+} */
+.title {
+    display: flex;
+    justify-content: center;
 }
+
+.index-nav {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.index-nav > * {
+    text-decoration: none;
+    background-color: rgba(50, 75, 24, 0.63);
+    color: white;
+    padding: 4%;
+    border-radius: 5px;
+    border: 2px solid rgb(23, 39, 23);
+}
+/* signup page animation */
+html {
+    height:100%;
+  }
+  
+  body {
+    margin:0;
+  }
+  
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(113, 149, 95) 50%, rgb(207, 211, 214) 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+  
+  .content {
+    background-color:rgba(255,255,255,.8);
+    border-radius:.25em;
+    box-shadow:0 0 .25em rgba(0,0,0,.25);
+    box-sizing:border-box;
+    left:50%;
+    padding:9vmin;
+    position:fixed;
+    text-align:center;
+    top:40%;
+    transform:translate(-50%, -50%);
+  }
+  
+  .content h1 {
+    font-family:monospace;
+    color:rgb(44, 59, 36);
+  }
+
+  .content h3 {
+    color: black;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+
+  /* signup page */
+ .signup-form, .login-form > * {
+    margin-top: 4%;
+ }
