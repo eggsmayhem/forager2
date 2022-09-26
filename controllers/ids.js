@@ -79,13 +79,26 @@ module.exports = {
             //     headers: {'User-Agent': 'https://spyles.netlify.app/'}
             // })
             //gets partial article
-            const wikiData = await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+plantDetails.suggestions[0].plant_name, {
-                method: 'GET',
-                headers: {'User-Agent': process.env.USER_AGENT}
-            })
-            // const article = await wikiData.text()
-            const article = await wikiData.json()
+            const wikiOptions = {
+              method: 'GET',
+              url: 'https://en.wikipedia.org/api/rest_v1/page/summary/'+plantDetails.suggestions[0].plant_name,
+              headers: {
+                'User-Agent': process.env.USER_AGENT,
+              },
+              data: data
+            }
+
+            const wikiResponse = await axios.request(wikiOptions)
+            const article = wikiResponse.data
+            // const article = JSON.stringify(wikiResponse)
             console.log(article)
+            // const wikiData = await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+plantDetails.suggestions[0].plant_name, {
+            //     method: 'GET',
+            //     headers: {'User-Agent': process.env.USER_AGENT}
+            // })
+            // const article = await wikiData.text()
+            // const article = await wikiData.json()
+            // console.log(article)
 
             //im getting the article, but all the below values are returning undefined, even though they do exist if you check postman
 
