@@ -17,7 +17,7 @@ module.exports = {
     getPlants: async (req,res)=>{
         console.log(req.user)
         try{
-            const plants = await Plant.find({userId:req.user.id})
+            const plants = await Plant.find({userId:req.user.id}).lean()
 
             //remove any plants that don't have coordinages as this kind of object breaks the front end 
     
