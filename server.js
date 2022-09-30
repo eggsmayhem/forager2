@@ -23,6 +23,14 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+
+//ts
+const bodyParser = require('body-parser');            
+app.use(bodyParser.json({limit:'50mb'}));
+//ts
+ 
+app.use(bodyParser.urlencoded({extended:true, limit:'50mb'})); 
+
 app.use(logger('dev'))
 app.use(methodOverride("_method"));
 // Sessions
