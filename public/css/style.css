@@ -118,6 +118,10 @@ input[type=button] {
     display: none;
 }
 
+.uploadColor {
+    background-color: red;
+}
+
 hr {
     border: 0 none;
     height: 1px;
