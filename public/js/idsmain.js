@@ -49,5 +49,6 @@ async function sendCoords(coordArray) {
 
 document.querySelector('.button-skin').addEventListener('click', ()=> {
   document.getElementById('imageUpload').click()
+  document.querySelector('.btn').classList.add('uploadColor')
 })
 
