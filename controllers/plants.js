@@ -20,9 +20,16 @@ module.exports = {
             const plants = await Plant.find({userId:req.user.id}).lean()
 
             //remove any plants that don't have coordinages as this kind of object breaks the front end 
-    
-         
             res.status(200).json(plants)
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getOverview: async (req,res)=>{
+        console.log(req.user)
+        try{
+            const plants = await Plant.find({userId:req.user.id}).lean()
+            res.render('overview.ejs', { plants: plants })
         }catch(err){
             console.log(err)
         }

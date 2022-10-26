@@ -332,4 +332,30 @@ html {
     margin-top: 4%;
  }
 
- /* plant display page */
+ .overview-main-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ .overview-main-container-wrapper > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+
+ .discovery-count {
+    color: white;
+    margin-top: 3%;
+ }
+
+ /* overview page */ 
+ .overview-plant {
+    
+ }
+ .overview-plant > h2 {
+    color: white;
+}
+
+ .overview-plant > img {
+    width: 50%;
+ }

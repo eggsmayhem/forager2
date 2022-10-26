@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forager 🌿</title>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <div class="overview-main-container-wrapper">
+        <div class="discovery-count"">You've discovered <%= plants.length %> plants! Good job!</div>
+        <% plants.forEach( plant => { %>
+            <div class="overview-plant">
+                <h2><%= plant.scientificName %></h2>
+                <img src="<%= plant.wikiPic %>" alt="">
+            </div>
+        <% }) %>
+    </div>
+    
+    <div class="bottom-nav-wrapper">
+        <div class="bottom-nav">
+            <a href="/plants">View Map</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>  
+
+</body>
+</html>
