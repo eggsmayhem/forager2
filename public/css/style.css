@@ -204,7 +204,7 @@ hr {
 
 .article a {
     text-decoration: none;
-    border: 1px solid hsl(120, 8%, 42%);
+    border: 2px solid hsl(120, 25%, 86%);
     border-radius: 5px;
     color: white;
     padding: 8px;
@@ -216,8 +216,13 @@ hr {
     display: flex;
     justify-content: space-evenly;
 }
-.buttons-container > a {
+.buttons-container > form {
     padding: 4%;
+    width: 10%;
+}
+
+.buttons-container > form > button {
+    height: 100%;
 }
 .plant-img {
     max-width: 100%;
