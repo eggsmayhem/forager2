@@ -11,7 +11,8 @@ module.exports = {
   //load id page to submit form 
     testRoute: async (req, res) => {
       try {
-        res.render('displayPlant.ejs')
+        // res.render('displayPlant.ejs')
+        res.render('displayPlantdouble.ejs')
       }
       catch(err) {
         console.log(err)
@@ -21,6 +22,7 @@ module.exports = {
         try {
             console.log('render test')
             res.render('ids.ejs')
+       
         }
         catch(err) {
             console.log(err)
@@ -101,9 +103,9 @@ module.exports = {
             // console.log(article)
 
             //im getting the article, but all the below values are returning undefined, even though they do exist if you check postman
-
+            //it seems that Rosa, as an example, does not have an "originalImage"
             
-            const wikiPic = article.originalimage.source
+            const wikiPic = article.originalimage?.source
             const description = article.description
             const link = article.content_urls.mobile.page
             const extract = article.extract
@@ -151,7 +153,7 @@ module.exports = {
 
       //potential security issue, as here client code is saved in the User document, and later it is rendered to the user 
       //could potentially just do a custom validator with regex or the like, check on speed and size difference 
-      //currently using dependencie isValidCoordinates for validation 
+      //currently using dependency isValidCoordinates for validation 
     storeCoords: async(req, res) => {
       try {
         const coords = await req.body.coordinates
