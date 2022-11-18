@@ -59,7 +59,8 @@
 
         const mandrakeIcon = L.icon({
             iconUrl: '../img/mandrake1croppednobg.png',
-            iconSize: [38, 95],
+            // iconSize: [38, 95],
+            iconSize: [38, 45],
             iconAnchor: [22, 94],
             popupAnchor: [-3, -76],
             // shadowUrl: 'my-icon-shadow.png',
