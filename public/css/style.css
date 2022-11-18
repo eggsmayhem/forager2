@@ -375,10 +375,26 @@ html {
     border-bottom: 1px solid rgb(180, 196, 180);
  }
  .overview-plant > h2 {
-    color: white;
+    color: rgb(173, 163, 163);
+    margin: 0;
 }
-
  .overview-plant > img {
     width: 200px;
     height: 200px;
+    border-radius: 5px;
+ }
+
+ .overview-description {
+     color: white;
+     text-align: center;
+ }
+
+ .view-details {
+     text-decoration: none;
+     color: white;
+     background-color: rgb(30, 58, 30);
+     padding: 8px;
+     margin-top: 10px;
+     border: 1px solid rgba(255, 255, 255, 0.726);
+     border-radius: 5px;
  }
