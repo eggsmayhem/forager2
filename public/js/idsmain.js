@@ -23,6 +23,9 @@
     sendCoords([latitude, longitude])
     }
 
+    //clear local storage so mobile Safari asks for coords every time, preventing plant overwriting
+    localStorage.removeItem('plantCoords');
+    
     function onError() {
       message.classList.add('error');
       message.textContent = `Failed to get your location!`;
