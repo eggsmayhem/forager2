@@ -64,12 +64,13 @@ h1, h3 {
 } */
 
 .bottom-nav-wrapper {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     background-color: hsla(120, 35%, 15%, 0.527);
     width: 100%;
     padding: 2%;
-    z-index: 100;
+    /* z-index: 100; */
+    height: 60px;
    
 }
 
@@ -77,7 +78,8 @@ h1, h3 {
     display: flex;
     justify-content: space-around;
     width:100%;
-    z-index: 100;
+    /* z-index: 100; */
+    height: 30px;
 }
 
 .bottom-nav > * {
@@ -151,7 +153,8 @@ hr {
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
-    height: 140vh;
+    /* height: 140vh; */
+    height: 100vh;
    
 }
 
@@ -215,6 +218,7 @@ hr {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 10px;
 }
 .buttons-container > form {
     padding: 4%;
@@ -337,6 +341,10 @@ html {
     margin-top: 4%;
  }
 
+ .overview-body {
+     display: flex;
+     flex-direction: column;
+ }
  .overview-main-container-wrapper {
     display: flex;
     flex-direction: column;
@@ -350,17 +358,23 @@ html {
 
  .discovery-count {
     color: white;
-    margin-top: 3%;
+    margin: 4% 0;
  }
 
  /* overview page */ 
  .overview-plant {
-    
+    background-color:rgba(61, 92, 61, 0.548);
+    width: 55%;
+    /* margin: 10px 0; */
+    padding: 15px 0;
+    /* border-radius: 10px; */
+    border-bottom: 1px solid rgb(180, 196, 180);
  }
  .overview-plant > h2 {
     color: white;
 }
 
  .overview-plant > img {
-    width: 50%;
+    width: 200px;
+    height: 200px;
  }

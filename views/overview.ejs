@@ -9,22 +9,25 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-    <div class="overview-main-container-wrapper">
-        <div class="discovery-count"">You've discovered <%= plants.length %> plants! Good job!</div>
-        <% plants.forEach( plant => { %>
-            <div class="overview-plant">
-                <h2><%= plant.scientificName %></h2>
-                <img src="<%= plant.wikiPic %>" alt="">
-            </div>
-        <% }) %>
-    </div>
-    
-    <div class="bottom-nav-wrapper">
-        <div class="bottom-nav">
-            <a href="/plants">View Map</a>
-            <a href="/logout">Logout</a>
+    <div class="overview-body">
+        <div class="overview-main-container-wrapper">
+            <div class="discovery-count"">You've discovered <%= plants.length %> plants! Good job!</div>
+            <% plants.forEach( plant => { %>
+                <div class="overview-plant">
+                    <h2><%= plant.scientificName %></h2>
+                    <img src="<%= plant.wikiPic %>" alt="">
+                </div>
+            <% }) %>
         </div>
-    </div>  
+        <div class="bottom-nav-wrapper">
+            <div class="bottom-nav">
+                <a href="/plants">My Map</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div> 
+    </div> 
+    
+   
 
 </body>
 </html>
