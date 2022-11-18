@@ -62,7 +62,12 @@ module.exports = {
             //encode image to base64 for plantApi
             const encodedPlant = await encode(plantUrl, options)
 
-            const data = JSON.stringify({"images": [encodedPlant]})
+            const data = JSON.stringify(
+              {"images": [encodedPlant],
+               "lattitude": coords[0],
+               "longitude": coords[1],
+               "plant_details": ["common_names", "edible_parts", "propagation_methods"]
+              })
             const plantOptions = {
                 method: 'POST',
                 url: 'https://api.plant.id/v2/identify',
@@ -73,7 +78,7 @@ module.exports = {
               }
             const plantData = await axios.request(plantOptions)
             const plantDetails = plantData.data
-            console.log(plantDetails)
+            console.log(plantDetails.suggestions[0].plant_details)
               //currently saving the PlantAPI reference image to limit the cloudinary storage space I require. I might eventually offer the user's image so they can more easily identify locations and how others where to forage
               //gets full article
             // const wikiData = await fetch('https://en.wikipedia.org/api/rest_v1/page/html/'+plantDetails.suggestions[0].plant_name, {
@@ -105,7 +110,12 @@ module.exports = {
             //im getting the article, but all the below values are returning undefined, even though they do exist if you check postman
             //it seems that Rosa, as an example, does not have an "originalImage"
             
-            const wikiPic = article.originalimage?.source
+            const wikiPic = article.originalimage?.source || plantUrl
+            //destroy and non-essential plantUrls to save Cloudinary space
+            //test this after you have delete plant working
+            // if (!article.originalimage) {
+            //   cloudinary.uploader.destroy(plantImg.public_id)
+            // }
             const description = article.description
             const link = article.content_urls.mobile.page
             const extract = article.extract
@@ -126,7 +136,10 @@ module.exports = {
                 description: description,
                 link: link,
                 extract: extract,
-                title: title
+                title: title,
+                commonName: plantDetails.suggestions[0].plant_details.common_names[0],
+                edibleParts: plantDetails.suggestions[0].plant_details.edible_parts[0],
+                propMethods: plantDetails.suggestions[0].plant_details.propagation_methods,
               })
 
               

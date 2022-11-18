@@ -17,12 +17,24 @@
         <% } %>
         <% if (locals.plant) { %>
             <div class="article">
-                <h2 class="scientific-name"><%= plant.scientificName %></h2>
+                <h2 class="scientific-name"><%= plant.commonName %></h2>
                 <%= plant.scientificName %>
                 <img src="<%= plant.wikiPic %>" class="plant-img"alt="">
                 <div class="description"><%= plant.description %></div>
                 <hr>
                 <div class="extract"><%= plant.extract %></div>
+                <div class="plant-details">
+                    <span>Edible parts: </span>
+                    <% for (let part of plant.edibleParts) { %>
+                        <span><%= part %>;</span>
+                    <% } %>
+                </div>
+                <div class="plant-details">
+                    <span>Propagation methods: </span>
+                    <% for (let method of plant.propMethods) { %>
+                        <span><%= method %>;</span>
+                    <% } %>
+                </div>
                 <a href="<%= plant.link %>">View on Wikipedia</a>
             </div>
         <% } %>

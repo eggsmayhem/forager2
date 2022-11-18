@@ -50,7 +50,17 @@ const PlantSchema = new mongoose.Schema({
             rendered: {
                 type: Boolean,
                 default: false
-            }
+            },
+            commonName: {
+                type: String
+            },
+            edibleParts: {
+                type: Array
+            },
+            propMethods: {
+                type: Array
+            },
+            
 })
 
 module.exports = mongoose.model('Plant', PlantSchema)

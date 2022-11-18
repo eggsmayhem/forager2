@@ -212,7 +212,11 @@ hr {
     color: white;
     padding: 8px;
     margin-bottom: 4%;
-}                       
+} 
+
+.plant-details {
+    margin: 5px 0;
+}
 
 .buttons-container {
     width: 100%;
