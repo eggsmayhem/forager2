@@ -22,8 +22,16 @@
             <div class="extract">Rhexia mariana is a species of flowering plant in the Melastomataceae family known by the common names pale meadow beauty or Maryland meadowbeauty. It is native to the eastern and lower midwestern United States.</div>
             <a href="https://www.wikipedia.org/">View on Wikipedia</a>
             <div class="buttons-container">
-                <a href="/plants">Save to Map</a>
-                <a href="/logout">Don't save</a>
+                <!-- <a href="/plants">Save to Map</a>
+                <a href="/logout">Don't save</a> -->
+                <form action="/plants">
+                    <button type="submit" value="View on Map">View On Map</button>
+                </form>
+                
+                <form
+                action="/plants/"
+                method="POST"
+              ><button type="submit" class="btn btn-primary" value="Upload">Delete Plant</button></form>
             </div>
         </div>
     </div>
@@ -33,10 +41,10 @@
     <div class="bottom-nav-wrapper">
         <div class="bottom-nav">
           <a href="/plants">My Map</a>
+          <a href="/plants/overview">My Plants</a>
           <a href="/logout">Logout</a>
-          <a href="#">Help / FAQ</a>
         </div>
-      </div>  
+    </div>  
 
     <script src="js/idsmain.js"></script>
 </body>
