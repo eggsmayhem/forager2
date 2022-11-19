@@ -9,14 +9,29 @@
 
 (async () => {
   try {
-    console.log('test function run')
-    const map = L.map('map').setView([39.0047, -77.3602], 10)
+    console.log('test function run');
+   
 
     const response = await fetch('/plants/getPlants', {
       method: 'GET',
     })
+
+    const plantHolder = await response.json();
+
+    const viewStart = plantHolder[0].coordinates || [39.0047, -77.3602];
+
+    // const map = L.map('map').setView([...plantHolder[0].coordinates], 5)
+    const map = L.map('map').setView(viewStart, 5);
+
+    console.log(plantHolder[0].coordinates)
+    // if (plantHolder[0].coordinates) {
+    //   const map = L.map('map').setView([...plantHolder[0].coordinates], 5)
+    // }
+    // else {
+    //   const map = L.map('map').setView([39.0047, -77.3602], 5)
+    // }
+
     
-    const plantHolder = await response.json()
 
     //hardcode test since map won't load at all, but should
     // const plant = {
